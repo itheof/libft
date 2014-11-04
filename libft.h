@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/04 15:08:01 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 00:09:28 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,13 @@ int»»···ft_isascii(int c);
 int		ft_isprint(int c);
 int»»···ft_toupper(int c);
 int»»···ft_tolower(int c);
+
+void»···*ft_memalloc(size_t size);
+void»···ft_memdel(void **ap);
+char»···*strnew(size_t size);
+void»···ft_strdel(char **as);
+void»···ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+
 
 #endif
