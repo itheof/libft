@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/03 17:12:05 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/04 15:08:01 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,22 @@ size_t»·ft_strlen(const char *s);
 char»···*ft_strdup(const char *s1);
 char»···*ft_strcpy(char *dst, const char *src);
 char»···*ft_strncpy(char *dst, char *src, size_t n);
+char»···*ft_strcat(char *s1, const char *s2);
+char»···*ft_strncat(char *s1, const char *s2, size_t n);
 
+char»···*ft_strchr(const char *s, int c);
+char»···*ft_strrchr(const char *s, int c);
+char»···*ft_strstr(const char *s1, const char *s2);
+char»···*ft_strnstr(const char *s1, const char *s2, size_t n);
+int»»···ft_strcmp(const char *s1, const char *s2);
+int»»···ft_strncmp(const char *s1, const char *s2, size_t n);
+int»»···ft_atoi(const char *str);
 int»»···ft_isalpha(int c);
 int»»···ft_isdigit(int c);
+int»»···ft_isalnum(int c);
+int»»···ft_isascii(int c);
+int		ft_isprint(int c);
+int»»···ft_toupper(int c);
+int»»···ft_tolower(int c);
 
 #endif

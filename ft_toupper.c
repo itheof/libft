@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 17:13:40 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/04 10:09:18 by tvallee          ###   ########.fr       */
+/*   Created: 2014/11/04 11:00:06 by tvallee           #+#    #+#             */
+/*   Updated: 2014/11/04 11:04:55 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_isalnum(int c)
+int		ft_toupper(int c)
 {
-	if (isalpha(c) || isdigit(c))
-		return (1);
+	if ((unsigned char)c > 96 && (unsigned char)c < 123)
+		return (c - 32);
 	else
-		return (0);
+		return (c);
 }
