@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:18:56 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 12:27:05 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 18:51:02 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,24 @@
 char	*ft_strtrim(char const *s)
 {
 	char	*r;
-	size_t	len;
+	size_t	j;
 	size_t	i;
 
-	len = 0;
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] != ' ' && s[i] != '\n' && s[i] != '\t')
-			len++;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
+	j = ft_strlen(s);
+	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
+		j--;
+	r = malloc(sizeof(char) * (j - i + 2));
+	if (r)
+	{
+		while (i <= j)
+		{
+			r[i] = s[i];
+			i++;
+		}
+		r[i] = 0;
 	}
-	
+	return (r);
 }

@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 13:53:11 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/03 15:07:55 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 18:45:46 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (dst > src)
 	{
 		while (i >= 0)
-			dst[i] = src[i--];
+			*(unsigned char *)(dst + i) = *(unsigned char *)(src + i--);
 		return (dst);
 	}
 	else

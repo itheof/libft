@@ -6,9 +6,11 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:29:24 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/03 16:56:56 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 19:05:13 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {

@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 15:21:56 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/03 15:44:55 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 18:40:09 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if ((unsigned char)s1[i] > (unsigned char)s2[i])
+		if (*(unsigned char *)(s1 + i) > *(unsigned char *)(s2 + i))
 			return (1);
-		if ((unsigned char)s1[i] < (unsigned char)s2[i])
+		if (*(unsigned char *)(s1 + i) < *(unsigned char *)(s2 + i))
 			return (-1);
 		i++;
 	}
