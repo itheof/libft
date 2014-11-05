@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 16:11:32 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 16:15:07 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:18:21 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	ft_putstr(s, fd);
-	ft_putchar(10, fd);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd(10, fd);
 }

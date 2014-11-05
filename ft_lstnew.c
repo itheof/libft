@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 16:27:47 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 18:24:56 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:26:51 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void const *data, size_t data_size)
 	new = malloc(sizeof(t_list));
 	if (new)
 	{
-		new->content = data;
+		new->content = (void *)data;
 		new->content_size = (data) ? data_size : 0;
 		new->next = NULL;
 	}

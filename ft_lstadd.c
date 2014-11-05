@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 18:03:20 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 18:06:40 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:43:05 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_lstadd(t_list **alst, t_list *new)
 {
 	new->next = *alst;
-	*alst= new;
+	*alst = new;
 }

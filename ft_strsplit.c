@@ -6,11 +6,14 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 14:51:18 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 19:01:01 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:40:57 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+
+:
 
 char	**ft_strsplit(char const *s, char c)
 {

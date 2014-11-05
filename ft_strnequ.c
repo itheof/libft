@@ -6,9 +6,11 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:21:24 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 11:27:01 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:14:47 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {

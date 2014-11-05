@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:09:05 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 12:17:19 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:45:48 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*r;
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	r = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (r)

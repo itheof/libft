@@ -6,9 +6,11 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 11:40:52 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/04 11:54:06 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:15:42 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {

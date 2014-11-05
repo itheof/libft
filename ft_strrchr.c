@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:48:55 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/04 14:04:38 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:13:15 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 		while (*s != (char)c && *s)
 			s++;
 		if (*s == (char)c)
-			r = s;
+			r = (char *)s;
 	}
 	return (NULL);
 }

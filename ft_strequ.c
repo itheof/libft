@@ -6,9 +6,11 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:16:14 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 11:20:41 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:08:47 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_strequ(char const *s1, char const *s2)
 {

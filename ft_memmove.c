@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 13:53:11 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 18:45:46 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/05 20:44:18 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	}
 	else
-		return(ft_memcpy(dst, src, len));
+		return (ft_memcpy(dst, (void *)src, len));
 }
