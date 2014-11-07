@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 15:02:31 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 15:27:01 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/07 00:49:04 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ char	*ft_itoa(int n)
 	str = malloc(sizeof(char) * (len + 1));
 	if (str)
 	{
+		str[len] = 0;
+		str[0] = 65;
 		if (n < 0)
 			str[0] = '-';
-		str[len--] = 0;
-		while (n)
+		while (len  && !(len == 1 && str[0] == '-'))
 		{
-			str[len--] = n % 10 + '0';
+			str[--len] = (n < 0) ? -1 * (n % 10) + '0' : n % 10 + '0';
 			n = n / 10;
 		}
 	}

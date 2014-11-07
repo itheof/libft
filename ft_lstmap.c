@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 18:15:50 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 20:43:46 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/06 17:38:14 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
+	t_list	*r;
 
+	r = NULL;
+	return (r);
 }

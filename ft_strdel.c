@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 23:48:44 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/04 23:52:42 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/06 18:41:56 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)as);
+	if (as)
+	{
+		if (*as)
+			free(*as);
+		*as = NULL;
+	}
 }

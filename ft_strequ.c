@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:16:14 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 20:08:47 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/06 19:21:00 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int		ft_strequ(char const *s1, char const *s2)
 	size_t	i;
 
 	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
+	if (s1 && s2 && !s1[0] && !s2[0])
+		return (1);
+	while (s1 && s2 && s1[i] && s2[i] && s1[i] == s2[i])
 	{
 		i++;
 		if (s1[i] == 0 && s2[i] == 0)

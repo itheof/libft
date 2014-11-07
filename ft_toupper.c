@@ -6,13 +6,13 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 11:00:06 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/04 11:04:55 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/06 18:32:16 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_toupper(int c)
 {
-	if ((unsigned char)c > 96 && (unsigned char)c < 123)
+	if (c > 96 && c < 123)
 		return (c - 32);
 	else
 		return (c);

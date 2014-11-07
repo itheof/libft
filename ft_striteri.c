@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 00:02:18 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 00:08:24 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/06 18:55:42 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int i;
 
 	i = 0;
-	while (*s)
+	while (s && f && *s)
 		f(i++, s++);
 }

@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2013/11/29 19:01:39 by mfontain         ###   ########.fr       */
+/*   Updated: 2014/11/06 23:15:28 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,8 +205,8 @@ int					main(int argc, const char **argv)
 	D_ADD_TEST(strsplit);
 #define	D_ITOA
 	D_ADD_TEST(itoa);
-#define	D_STRTRIM
-	D_ADD_TEST(strtrim);
+//#define	D_STRTRIM
+//	D_ADD_TEST(strtrim);
 #define	D_LSTNEW
 	D_ADD_TEST(lstnew);
 #define	D_LSTDELONE

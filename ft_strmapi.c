@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:04:18 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 11:11:24 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/06 19:18:08 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
-	r = malloc(sizeof(char) * (1 + ft_strlen(s)));
-	if (r)
+	r = (s) ? malloc(sizeof(char) * (1 + ft_strlen(s))) : NULL;
+	if (f && s && r)
 	{
 		while (i < ft_strlen(s))
 		{

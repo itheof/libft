@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 10:20:45 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/04 10:26:20 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/06 18:31:40 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isprint(int c)
 {
-	if ((unsigned char)c > 32 && (unsigned char)c < 127)
+	if (c > 31 && c < 127)
 		return (1);
 	else
 		return (0);
