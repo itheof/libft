@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:21:24 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/06 20:24:42 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/07 22:49:16 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	size_t	i;
 
+	if (!n)
+		return (1);
 	if (s1 && s2)
 	{
 		i = 0;
