@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:30:43 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/06 20:25:55 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/07 18:34:04 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		}
 		return (r);
 	}
+	return (NULL);
 }
