@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 16:27:47 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/07 01:01:34 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/07 11:49:14 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*ft_lstnew(void const *data, size_t data_size)
 	if (new)
 	{
 		new->content = (void *)data;
-		new->content_size = (data) ? data_size : 0;
+		new->content_size = data_size;
 		new->next = NULL;
 	}
 	return (new);
