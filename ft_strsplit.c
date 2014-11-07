@@ -6,12 +6,12 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 14:51:18 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/06 23:40:43 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/07 01:07:06 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 static char		*ft_strmalloc(char *s, size_t i, size_t j)
 {
 	char	*r;
@@ -43,7 +43,7 @@ static size_t	ft_countstr(char const *s, char c)
 			count++;
 			i++;
 		}
-		while (s[i] && s[i] !=c )
+		while (s[i] && s[i] != c)
 			i++;
 	}
 	return (count);
@@ -67,7 +67,7 @@ char			**ft_strsplit(char const *s, char c)
 		while (s[str.i] && s[str.i] == c)
 			str.i++;
 		str.j = 0;
-		while (s[str.i + str.j] && s[str.i +str.j] != c)
+		while (s[str.i + str.j] && s[str.i + str.j] != c)
 			str.j++;
 		r[k++] = ft_strmalloc((char *)s, str.i, str.j);
 		str.i += str.j;
