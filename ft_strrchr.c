@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:48:55 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/07 18:06:48 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/08 17:29:51 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*r;
+	char	*tmp;
 
-	r = NULL;
-	while (*s)
-	{
-		while (*s != (char)c && *s)
-			s++;
-		if (*s == (char)c)
-		{
-			r = (char *)s;
-			return (r);
-		}
-	}
-	return (NULL);
+	tmp = (char *)s + ft_strlen(s);
+	while (s < tmp && *tmp != (char)c)
+		tmp--;
+	if (*tmp == (char)c)
+		return (tmp);
+	else
+		return (NULL);
 }

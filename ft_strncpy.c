@@ -6,13 +6,13 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:40:48 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 20:47:44 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/11/08 21:02:29 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, char *src, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
 	size_t	i;
 
