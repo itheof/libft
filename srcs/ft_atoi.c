@@ -6,9 +6,11 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 11:11:36 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/04 11:29:10 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/12/10 15:12:56 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_atoi(const char *str)
 {

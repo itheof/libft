@@ -6,9 +6,11 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 11:05:22 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/06 18:32:49 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/12/10 15:47:16 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_tolower(int c)
 {

@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 11:00:06 by tvallee           #+#    #+#             */
-/*   Updated: 2014/12/10 15:47:50 by tvallee          ###   ########.fr       */
+/*   Created: 2014/11/07 15:14:33 by tvallee           #+#    #+#             */
+/*   Updated: 2014/11/14 19:05:19 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int		ft_toupper(int c)
+# include <unistd.h>
+# include <stdlib.h>
+# include "libft.h"
+# define BUFF_SIZE 8
+
+typedef struct	s_buff
 {
-	if (c > 96 && c < 123)
-		return (c - 32);
-	else
-		return (c);
-}
+	char			*buff;
+	int				offst;
+	int				fd;
+	int				readret;
+	struct s_buff	*next;
+}				t_buff;
+
+int				get_next_line(int const fd, char **line);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:18:52 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/06 17:27:25 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/12/10 15:25:35 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, void *src, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
+		*((unsigned char *)dst + i) = *((unsigned char *)src + i);
 		i++;
 	}
 	return (dst);

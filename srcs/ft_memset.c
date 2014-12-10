@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 10:51:26 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 20:12:08 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/12/10 15:45:42 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		(*(unsigned char *)(b + i)) = c;
+		(*((unsigned char *)b + i)) = c;
 		i++;
 	}
 	return (b);
