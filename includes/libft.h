@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/09 20:39:37 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/12/15 15:26:37 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# define BUFF_SIZE 8
 
 typedef struct		s_list
 {
@@ -29,6 +30,15 @@ typedef struct		s_delim
 	size_t			i;
 	size_t			j;
 }					t_delim;
+
+typedef struct		s_buff
+{
+	char			*buff;
+	int				offst;
+	int				fd;
+	int				readret;
+	struct s_buff	*next;
+}					t_buff;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -88,4 +98,6 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+
+int					get_next_line(int const fd, char **line);
 #endif
