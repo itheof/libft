@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 14:51:18 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/08 23:23:05 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/12/15 16:42:37 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char			**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (NULL);
 	nb = ft_countstr(s, c);
-	r = malloc(sizeof(char **) * (nb + 1));
+	r = malloc(sizeof(char *) * (nb + 1));
 	str.i = 0;
 	k = 0;
 	while ((size_t)k < nb)
