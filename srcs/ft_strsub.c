@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:30:43 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/07 18:34:04 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/12/24 19:15:29 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (s)
 	{
 		i = 0;
-		r = malloc(sizeof(char) * len);
+		r = malloc(sizeof(*r) * (len + 1));
 		if (r)
 		{
 			while (i < len)
