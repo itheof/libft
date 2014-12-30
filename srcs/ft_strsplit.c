@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 14:51:18 by tvallee           #+#    #+#             */
-/*   Updated: 2014/12/25 21:23:51 by tvallee          ###   ########.fr       */
+/*   Updated: 2014/12/30 08:29:06 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ char			**ft_strsplit(char const *s, char c)
 		while (s[str.i] == c)
 			str.i++;
 		str.j = str.i;
-		while (s[str.j] != c)
+		while (s[str.j] && s[str.j] != c)
 			str.j++;
 		r[k] = ft_strsub(s, str.i, str.j - str.i);
 		k++;
 		str.i = str.j + 1;
 	}
-	r[k] = '\0';
+	r[k] = NULL;
 	return (r);
 }
