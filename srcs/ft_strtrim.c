@@ -6,12 +6,11 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:18:56 by tvallee           #+#    #+#             */
-/*   Updated: 2014/12/30 08:31:20 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/01/09 21:36:27 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {
