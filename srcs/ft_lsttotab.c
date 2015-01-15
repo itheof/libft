@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freetab.c                                       :+:      :+:    :+:   */
+/*   ft_lsttotab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/30 10:50:57 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/13 17:13:14 by tvallee          ###   ########.fr       */
+/*   Created: 2015/01/13 16:55:44 by tvallee           #+#    #+#             */
+/*   Updated: 2015/01/13 17:10:55 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_freetab(void **tab)
+void	**ft_lsttotab(t_list *list, int destroy)
 {
-	int i;
+	void	**tab;
+	int		len;
+	int		i;
+	t_list	bu;
 
-	if (tab)
+	i = 0;
+	len = ft_lstlen(list);
+	tab = malloc(sizeof(*tab) * (len + 1));
+	while (list)
 	{
-		i = 0;
-		while (tab[i] != 0)
-			free(tab[i++]);
-		free(tab);
+		tab[i] = list->content;
+		bu = *list;
+		if (destroy)
+			free(list);
+		list = bu.next;
+		i++;
 	}
-	return (0);
+	tab[i] = NULL;
+	return (tab);
 }

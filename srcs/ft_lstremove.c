@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freetab.c                                       :+:      :+:    :+:   */
+/*   ft_lstremove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/30 10:50:57 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/13 17:13:14 by tvallee          ###   ########.fr       */
+/*   Created: 2015/01/14 11:11:30 by tvallee           #+#    #+#             */
+/*   Updated: 2015/01/14 16:36:05 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_freetab(void **tab)
+int				ft_lstremove(t_list *list, t_list *elem)
 {
-	int i;
+	t_list		*old;
+	t_list		*current;
 
-	if (tab)
+	if (list)
 	{
-		i = 0;
-		while (tab[i] != 0)
-			free(tab[i++]);
-		free(tab);
+		current = list;
+		while (current && current != elem)
+		{
+			old = current;
+			current = current->next;
+		}
+		if (current == elem)
+		{
+			old->next = current->next;
+			free(current);
+			return (1);
+		}
 	}
 	return (0);
 }

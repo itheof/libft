@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freetab.c                                       :+:      :+:    :+:   */
+/*   ft_atabtoistr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/30 10:50:57 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/13 17:13:14 by tvallee          ###   ########.fr       */
+/*   Created: 2015/01/13 17:31:06 by tvallee           #+#    #+#             */
+/*   Updated: 2015/01/13 17:58:07 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_freetab(void **tab)
+int		*ft_atabtoistr(char **tab)
 {
+	int len;
 	int i;
+	int *str;
 
-	if (tab)
+	len = 0;
+	while (tab[len] != NULL)
+		len++;
+	str = malloc(sizeof(*str) * (len + 2));
+	i = 0;
+	str[0] = len + 1;
+	while (tab[i] != NULL)
 	{
-		i = 0;
-		while (tab[i] != 0)
-			free(tab[i++]);
-		free(tab);
+		str[i + 1] = ft_atoi(tab[i]);
+		i++;
 	}
-	return (0);
+	return (str);
 }

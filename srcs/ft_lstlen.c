@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freetab.c                                       :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/30 10:50:57 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/13 17:13:14 by tvallee          ###   ########.fr       */
+/*   Created: 2015/01/13 16:50:36 by tvallee           #+#    #+#             */
+/*   Updated: 2015/01/13 16:54:03 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_freetab(void **tab)
+int		ft_lstlen(t_list *list)
 {
-	int i;
+	int		nb;
 
-	if (tab)
+	nb = 0;
+	while (list != NULL)
 	{
-		i = 0;
-		while (tab[i] != 0)
-			free(tab[i++]);
-		free(tab);
+		list = list->next;
+		nb++;
 	}
-	return (0);
+	return (nb);
 }

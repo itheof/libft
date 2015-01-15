@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freetab.c                                       :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/30 10:50:57 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/13 17:13:14 by tvallee          ###   ########.fr       */
+/*   Created: 2015/01/14 09:40:24 by tvallee           #+#    #+#             */
+/*   Updated: 2015/01/14 09:50:12 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_freetab(void **tab)
+void	ft_lstpushback(t_list **list, t_list *elem)
 {
-	int i;
+	t_list	*current;
 
-	if (tab)
+	if (list)
 	{
-		i = 0;
-		while (tab[i] != 0)
-			free(tab[i++]);
-		free(tab);
+		if (*list)
+		{
+			current = *list;
+			while (current->next)
+				current = current->next;
+			current->next = elem;
+		}
+		else
+			*list=elem;
 	}
-	return (0);
 }

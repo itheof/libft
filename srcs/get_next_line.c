@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 15:14:30 by tvallee           #+#    #+#             */
-/*   Updated: 2014/12/24 19:23:57 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/01/15 14:35:30 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,11 @@ static t_buff	*ft_init(int fd, t_buff **list)
 		current = current->next;
 	if (current != NULL)
 		return (current);
-	if ((current = malloc(sizeof(t_buff))))
+	if ((current = ft_memalloc(sizeof(t_buff))))
 	{
 		if (!(current->buff = ft_memalloc(sizeof(char) * (BUFF_SIZE + 1))))
 			return (NULL);
 		current->fd = fd;
-		current->offst = 0;
-		current->next = NULL;
 		current->readret = 1;
 		if (old)
 			old->next = current;
@@ -81,7 +79,6 @@ static void		ft_end(t_buff **list, int fd, int ret)
 	t_buff	*old;
 	t_buff	*current;
 
-	old = NULL;
 	current = *list;
 	if (ret != 2)
 	{
