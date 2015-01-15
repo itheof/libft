@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2015/01/14 11:11:03 by tvallee          ###   ########.fr        #
+#    Updated: 2015/01/15 16:53:53 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ SRC		= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c \
 		ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c \
 		ft_tolower.c ft_toupper.c get_next_line.c ft_putendlfree.c ft_freetab.c \
-		ft_lstlen.c ft_lsttotab.c ft_atabtoistr.c ft_atoitab.c ft_lstpushback.c \
-		ft_lstremove.c
+		ft_lstlen.c ft_lsttotab.c ft_atabtoistr.c ft_strlsttoitab.c ft_lstpushback.c \
+		ft_lstremove.c ft_lstnewcopy.c
 NAME	= libft.a
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -ansi -pedantic -Wshadow -Wno-missing-noreturn\

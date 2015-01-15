@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/15 14:08:09 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/01/15 16:53:22 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
+t_list				*ft_lstnewcopy(void const *data, size_t data_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);

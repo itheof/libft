@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 17:16:14 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/14 09:30:16 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/01/15 16:43:40 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	**ft_strlsttoitab(t_list *lst, int destroy)
 	i = 0;
 	len = ft_lstlen(lst);
 	tab = malloc(sizeof(*tab) * (len + 1));
-	while (lst != NULL)
+	tab[len] = NULL;
+	while (i < len)
 	{
 		tab[i] = ft_atabtoistr(lst->content);
 		bu = *lst;
@@ -35,6 +36,5 @@ int	**ft_strlsttoitab(t_list *lst, int destroy)
 		lst = bu.next;
 		i++;
 	}
-	tab[i] = NULL;
 	return (tab);
 }

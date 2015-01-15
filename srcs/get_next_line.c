@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 15:14:30 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/15 14:35:30 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/01/15 15:48:01 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,12 @@ static t_buff	*ft_init(int fd, t_buff **list)
 	return (current);
 }
 
-static void		ft_end(t_buff **list, int fd, int ret)
+static int		ft_end(t_buff **list, int fd, int ret, int offset)
 {
 	t_buff	*old;
 	t_buff	*current;
 
+	old = NULL;
 	current = *list;
 	if (ret != 2)
 	{
@@ -94,6 +95,7 @@ static void		ft_end(t_buff **list, int fd, int ret)
 		free(current->buff);
 		free(current);
 	}
+	return (offset);
 }
 
 int				get_next_line(int const fd, char **line)
@@ -121,6 +123,5 @@ int				get_next_line(int const fd, char **line)
 			return (-1);
 	}
 	*line = s;
-	ft_end(&list, fd, ret);
-	return (*s || buff->readret != 0) ? 1 : 0;
+	return (*s || ft_end(&list, fd, ret, buff->offst) != 0) ? 1 : 0;
 }
