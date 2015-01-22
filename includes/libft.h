@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/15 16:53:22 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/01/22 15:32:57 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void				**ft_lsttotab(t_list *list, int free);
 int					**ft_strlsttoitab(t_list *lst, int destroy);
 int					*ft_atabtoistr(char **tab);
 int					ft_lstremove(t_list *list, t_list *elem);
-
+void                **ft_tablinedel(void **tab, void *line);
 int					ft_freetab(void **tab);
 
 int					get_next_line(int const fd, char **line);
