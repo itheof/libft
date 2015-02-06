@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2015/02/03 15:52:04 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/02/06 16:33:39 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char				*ft_itoa(int n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
-void				ft_putendlfree(char *s);
+void				ft_putendlfree_fd(char *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
@@ -106,7 +106,7 @@ int					ft_lstlen(t_list *lst);
 void				**ft_lsttotab(t_list *list, int free);
 int					**ft_strlsttoitab(t_list *lst, int destroy);
 int					*ft_atabtoistr(char **tab);
-int					ft_lstremove(t_list *list, t_list *elem);
+int					ft_lstremove(t_list **list, t_list *elem, int i);
 
 int					ft_freetab(void **tab);
 
