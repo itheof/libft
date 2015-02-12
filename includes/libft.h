@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2015/02/10 17:42:30 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/02/12 14:46:26 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,6 @@ typedef struct		s_buff
 	int				readret;
 	struct s_buff	*next;
 }					t_buff;
-
-//typedef struct      s_btree
-//{
-//    struct s_btree  *left;
-//    struct s_btree  *right;
-//    void            *item;
-//}                   t_btree;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -115,14 +108,10 @@ int					**ft_strlsttoitab(t_list *lst, int destroy);
 int					*ft_atabtoistr(char **tab);
 int					ft_lstremove(t_list **list, t_list *elem, int i);
 
-//t_btree             *btree_create_node(void *item);
-//void                btree_apply_infix(t_btree *root, void (*applyf)(void *));
-//void                btree_apply_prefix(t_btree *root, void (*applyf)(void *));
-//void                btree_apply_suffix(t_btree *root, void (*applyf)(void *));
-//void                btree_insert_data(t_btree **root, void *item, int
-//                        (*cmpf)(void *, void *));
 
 int					ft_freetab(void **tab);
+size_t              ft_tablen(void **tab);
+t_list              *ft_tabtolst(void **data);
 
 int					get_next_line(int const fd, char **line);
 #endif

@@ -6,13 +6,13 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 11:11:30 by tvallee           #+#    #+#             */
-/*   Updated: 2015/02/06 15:00:30 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/02/12 14:49:15 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_lstremove(t_list **list, t_list *elem, int free)
+int				ft_lstremove(t_list **list, t_list *elem, int doifree)
 {
 	t_list		*old;
 	t_list		*current;
@@ -30,7 +30,7 @@ int				ft_lstremove(t_list **list, t_list *elem, int free)
 			old->next = current->next;
 			if (!(current->next) && current == *list)
 				*list = NULL;
-			if (free)
+			if (doifree)
 				free(current->content);
 			free(current);
 			return (1);

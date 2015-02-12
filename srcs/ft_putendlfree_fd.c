@@ -6,13 +6,13 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/25 22:05:08 by tvallee           #+#    #+#             */
-/*   Updated: 2015/02/06 16:34:04 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/02/12 14:47:00 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendlfree(char *str, int fd)
+void	ft_putendlfree_fd(char *str, int fd)
 {
 	ft_putendl_fd(str, fd);
 	free(str);
