@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2015/02/14 19:11:21 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/03/02 21:10:47 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,8 @@ int					ft_lstremove(t_list **list, t_list *elem, int i);
 int					ft_freetab(void **tab);
 size_t              ft_tablen(void **tab);
 t_list              *ft_tabtolst(void **data);
+void                **ft_tablineadd(void *line, void **tab);
+void                **ft_tablinedel(void *line, void **tab);
 
 int					get_next_line(int const fd, char **line);
 #endif
