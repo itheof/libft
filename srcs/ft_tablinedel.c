@@ -6,13 +6,13 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 14:56:05 by tvallee           #+#    #+#             */
-/*   Updated: 2015/01/22 15:36:08 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/03/02 22:36:09 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	**ft_tablinedel(void **tab, void *line)
+void	**ft_tablinedel(void *line, void **tab)
 {
 	int		i;
 	void	**newtab;
