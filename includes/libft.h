@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2015/03/02 22:33:58 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/03/09 21:27:33 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-# define BUFF_SIZE 8
+# include <stdio.h>
+# define BUFF_SIZE 1
 
 typedef struct		s_list
 {
