@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2015/03/09 21:27:33 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/03/16 04:52:00 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char				**ft_strsplit(char const *s, char c);
 char                **ft_strsplit_whitespaces(char const *str);
 char				*ft_itoa(int n);
 void				ft_putchar(char c);
-void				ft_putstr(char const *s);
+int 				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 void				ft_putendlfree_fd(char *s, int fd);
 void				ft_putnbr(int n);
