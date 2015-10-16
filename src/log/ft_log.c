@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/02 12:12:10 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/08 13:44:08 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/10/15 10:13:51 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ void		ft_log(int loglvl, char *msg)
 	char	*color[9];
 	int		fd;
 
-	if (ft_set_log_lvl(L_GETLVL) < loglvl)
+	fd = ft_set_log_fd(L_GETLVL);
+	if (fd < loglvl)
 		return ;
-	fd = ft_set_log_fd(-1);
 	color[L_EMERGENCY] = C_EMERGENCY;
 	color[L_ALERT] = C_ALERT;
 	color[L_CRITICAL] = C_CRITICAL;
