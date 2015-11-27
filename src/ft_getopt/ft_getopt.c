@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 10:16:04 by tvallee           #+#    #+#             */
-/*   Updated: 2015/11/27 18:08:50 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/11/27 18:21:42 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static uintmax_t	get_opt(char *opt, char **validopts, int soloopt)
 			i++;
 		}
 		if (!validopts[i])
-			not_an_option(*opt);
+			return ((uintmax_t)(not_an_option(*opt)) * 0);
 		return (1 << i | get_opt(opt + 1, validopts, 0));
 	}
 }
@@ -85,10 +85,9 @@ int					ft_getopt(int *ac, char **av, char **validopts,
 			if (!ret || not_an_option(0))
 			{
 				ft_strcpy(buf, "illegal option: -- ");
-				if (not_an_option(0))
-					ft_getopt_emsg(ft_strdup(ft_strncat(buf, (not_an_option(0)), 1)));
-				else
-					ft_getopt_emsg(ft_strjoin("illegal option: -- ", *av + 2, 0));
+				ft_getopt_emsg((not_an_option(0)) ? ft_strdup(ft_strncat(buf,
+								(not_an_option(0)), 1)) : ft_getopt_emsg(
+								ft_strjoin(buf, *av + 2, 0)));
 				return (-1);
 			}
 			remove_line(av);
