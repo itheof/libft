@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/08 11:06:12 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/15 10:15:33 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/11/25 10:11:12 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ enum
 	L_DEBUG,
 	L_REGULAR
 };
+
+# define L_DEFAULT L_INFO
 
 int		ft_set_log_lvl(int lvl);
 int		ft_set_log_fd(int fd);

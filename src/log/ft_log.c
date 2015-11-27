@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/02 12:12:10 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/15 10:13:51 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/11/25 10:10:32 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	ft_print_type(int loglvl, int fd)
 
 int			ft_set_log_lvl(int lvl)
 {
-	static int maxlvl = L_ERROR;
+	static int maxlvl = L_DEFAULT;
 
 	if (lvl != L_GETLVL)
 		maxlvl = lvl;
@@ -80,7 +80,7 @@ void		ft_log(int loglvl, char *msg)
 	int		fd;
 
 	fd = ft_set_log_fd(L_GETLVL);
-	if (fd < loglvl)
+	if (loglvl > ft_set_log_lvl(L_GETLVL))
 		return ;
 	color[L_EMERGENCY] = C_EMERGENCY;
 	color[L_ALERT] = C_ALERT;
