@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2015/10/15 16:47:17 by tvallee          ###   ########.fr        #
+#    Updated: 2015/11/30 23:22:27 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIBC_SRC		= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 LIST_SRC		= ft_atabtoistr.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c \
 				  ft_lstiter.c ft_lstlen.c ft_lstnew.c ft_lstnewcopy.c \
 				  ft_lstpushback.c ft_lstremove.c ft_lsttotab.c \
-				  ft_strlsttoitab.c
+				  ft_strlsttoitab.c lst_merge_sort.c
 
 LOG_SRC			= ft_log.c
 

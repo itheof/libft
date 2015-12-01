@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/08 10:59:19 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/08 13:47:29 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/11/30 23:41:32 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,11 @@ void				**ft_lsttotab(t_list *list, int free);
 int					**ft_strlsttoitab(t_list *lst, int destroy);
 int					*ft_atabtoistr(char **tab);
 int					ft_lstremove(t_list **list, t_list *elem, int i);
+
+/*
+** Miscellaneous sorting functions
+*/
+
+t_list	*lst_merge_sort(t_list *lst, int (*cmp)(void *, void *));
 
 #endif

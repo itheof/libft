@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/10 12:14:55 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/10 12:22:51 by tvallee          ###   ########.fr       */
+/*   Updated: 2015/12/01 02:31:02 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft.h"
 
-# ifdef __unix__
+# if defined(__MACH__) || defined(__linux__)
 #  define FT_EOL(x) ft_putchar_fd('\n', x);
 # else
 #  define FT_EOL(x) ft_putstr_fd("\r\n", x);
