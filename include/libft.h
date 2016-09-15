@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2016/09/15 14:28:27 by tvallee          ###   ########.fr       */
+/*   Updated: 2016/09/15 14:40:05 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 # include <stdio.h>
 # include <time.h>
 
-# include "libft/ft_getopt.h"
+# include "libft/getopt.h"
 # include "libft/get_next_line.h"
-# include "libft/ft_log.h"
-# include "libft/ft_libc.h"
+# include "libft/log.h"
+# include "libft/libc.h"
 # include "libft/list.h"
 # include "libft/print.h"
-# include "libft/str_tools.h"
-# include "libft/tab_tools.h"
+# include "libft/string.h"
+# include "libft/array.h"
 
 /*
 ** The following are misc functions
