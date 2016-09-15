@@ -6,11 +6,11 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 10:16:04 by tvallee           #+#    #+#             */
-/*   Updated: 2015/11/27 18:21:42 by tvallee          ###   ########.fr       */
+/*   Updated: 2016/09/15 14:28:50 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_getopt.h"
+#include "libft/ft_getopt.h"
 
 static char			*not_an_option(char badc)
 {
