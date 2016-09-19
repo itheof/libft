@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 10:16:04 by tvallee           #+#    #+#             */
-/*   Updated: 2016/09/15 14:40:41 by tvallee          ###   ########.fr       */
+/*   Updated: 2016/09/19 15:46:41 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int					ft_getopt(int *ac, char **av, char **validopts,
 				ft_strcpy(buf, "illegal option: -- ");
 				ft_getopt_emsg((not_an_option(0)) ? ft_strdup(ft_strncat(buf,
 								(not_an_option(0)), 1)) : ft_getopt_emsg(
-								ft_strjoin(buf, *av + 2, 0)));
+								ft_strjoin(buf, *av + 2)));
 				return (-1);
 			}
 			remove_line(av);
