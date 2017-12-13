@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 12:59:05 by tvallee           #+#    #+#             */
-/*   Updated: 2017/11/27 13:34:41 by tvallee          ###   ########.fr       */
+/*   Updated: 2017/12/13 16:37:04 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		ft_puthex_fd(size_t n, int fd)
 {
 	const char	*map = "0123456789ABCDEF";
-	char		buf[sizeof(size_t) + 3];
+	char		buf[(sizeof(size_t) * 2) + 3];
 	size_t		i;
 	unsigned	half_byte;
 
