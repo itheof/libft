@@ -6,12 +6,12 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/10 12:16:07 by tvallee           #+#    #+#             */
-/*   Updated: 2016/09/19 15:45:43 by tvallee          ###   ########.fr       */
+/*   Updated: 2017/12/18 14:21:16 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STR_TOOLS_H
-# define STR_TOOLS_H
+#ifndef STRING_H
+# define STRING_H
 
 # include "libft.h"
 

@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/08 10:59:19 by tvallee           #+#    #+#             */
-/*   Updated: 2015/11/30 23:41:32 by tvallee          ###   ########.fr       */
+/*   Updated: 2017/12/18 14:20:59 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 # include "libft.h"
 
-typedef struct		s_list
-{
+typedef struct		s_list {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
@@ -39,6 +38,6 @@ int					ft_lstremove(t_list **list, t_list *elem, int i);
 ** Miscellaneous sorting functions
 */
 
-t_list	*lst_merge_sort(t_list *lst, int (*cmp)(void *, void *));
+t_list				*lst_merge_sort(t_list *lst, int (*cmp)(void *, void *));
 
 #endif

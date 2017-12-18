@@ -6,12 +6,12 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/10 12:17:30 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/10 12:20:43 by tvallee          ###   ########.fr       */
+/*   Updated: 2017/12/18 14:20:40 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TAB_TOOLS_H
-# define TAB_TOOLS_H
+#ifndef ARRAY_H
+# define ARRAY_H
 
 # include "libft.h"
 
