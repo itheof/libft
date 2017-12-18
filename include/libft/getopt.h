@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 10:16:50 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/15 16:36:24 by tvallee          ###   ########.fr       */
+/*   Updated: 2017/12/18 22:51:04 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,27 @@
 
 # include "libft.h"
 
-# define IS_SET(flag, bitmask) (1 << flag) & bitmask
+# define OPT_INIT(o) ((o) = (t_opt){NULL, 0, 0, 0, 0})
 
-int		ft_getopt(int *ac, char **av, char **validopts, uintmax_t *opts);
-char	*ft_getopt_emsg(char *emsg);
+typedef struct	s_opt
+{
+	const char	*optarg;
+	int			opterr;
+	int			optind;
+	int			optopt;
+	int			optoff;
+}				t_opt;
+
+enum			e_opt_type
+{
+	E_OPT_TYPE_ERR,
+	E_OPT_TYPE_SIMPLE,
+	E_OPT_TYPE_OPERAND
+};
+
+int				ft_getopt(int ac, const char *const *av,
+		const char *optstring, t_opt *state);
+void			ft_getopt_err(const char *name, const char *reason, char invalid);
+
 
 #endif

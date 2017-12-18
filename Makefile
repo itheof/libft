@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2017/12/07 00:00:36 by tvallee          ###   ########.fr        #
+#    Updated: 2017/12/18 22:55:07 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ LIST_SRC		= ft_atabtoistr.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c \
 
 LOG_SRC			= ft_log.c
 
-GETOPT_SRC		= ft_getopt.c
+GETOPT_SRC		= ft_getopt.c ft_getopt_err.c
 
 GNL_SRC			= get_next_line.c
 

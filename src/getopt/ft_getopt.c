@@ -1,100 +1,114 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_opts.c                                         :+:      :+:    :+:   */
+/*   ft_getopt.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/15 10:16:04 by tvallee           #+#    #+#             */
-/*   Updated: 2016/09/19 15:46:41 by tvallee          ###   ########.fr       */
+/*   Created: 2016/09/30 13:49:50 by tvallee           #+#    #+#             */
+/*   Updated: 2017/12/18 22:53:58 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/getopt.h"
 
-static char			*not_an_option(char badc)
+static int	opt_get_type(const char *const *av,
+		const char *optstring, t_opt *state)
 {
-	static char		c = 0;
+	char	*addr;
+	char	temp;
 
-	if (badc)
-		c = badc;
-	return (c ? &c : NULL);
-}
-
-static uintmax_t	get_opt(char *opt, char **validopts, int soloopt)
-{
-	size_t	i;
-
-	i = 0;
-	if (soloopt && *opt == '-')
+	temp = av[state->optind][state->optoff];
+	state->optopt = temp;
+	if ((addr = ft_strchr(optstring, temp)) == NULL)
 	{
-		while (validopts[i])
-			if (!ft_strcmp(validopts[i++], opt + 1))
-				return (1 << (i - 1));
-		return (0);
-	}
-	else
-	{
-		if (*opt == 0)
-			return (0);
-		while (validopts[i])
-		{
-			if (validopts[i][0] == *opt && !validopts[i][1])
-				break ;
-			i++;
-		}
-		if (!validopts[i])
-			return ((uintmax_t)(not_an_option(*opt)) * 0);
-		return (1 << i | get_opt(opt + 1, validopts, 0));
-	}
-}
-
-static void			remove_line(char **av)
-{
-	while (av[1])
-	{
-		av[0] = av[1];
-		av++;
-	}
-	av[0] = NULL;
-}
-
-char				*ft_getopt_emsg(char *emsg)
-{
-	static char		*err = NULL;
-
-	if (emsg)
-		err = emsg;
-	else
-		return (err);
-	return (err);
-}
-
-int					ft_getopt(int *ac, char **av, char **validopts,
-																uintmax_t *opts)
-{
-	uintmax_t	ret;
-	char		buf[21];
-
-	*opts = 0;
-	while (*av != NULL)
-	{
-		if (av[0][0] == '-' && av[0][1] && (*ac)--)
-		{
-			ret = get_opt(*av + 1, validopts, 1);
-			if (!ret || not_an_option(0))
-			{
-				ft_strcpy(buf, "illegal option: -- ");
-				ft_getopt_emsg((not_an_option(0)) ? ft_strdup(ft_strncat(buf,
-								(not_an_option(0)), 1)) : ft_getopt_emsg(
-								ft_strjoin(buf, *av + 2)));
-				return (-1);
-			}
-			remove_line(av);
-			*opts |= ret;
-		}
+		if (av[state->optind][state->optoff + 1] != '\0')
+			state->optoff += 1;
 		else
-			av++;
+		{
+			state->optoff = 0;
+			state->optind += 1;
+		}
+		if (state->opterr)
+			ft_getopt_err(av[0], ": invalid option -- '", temp);
+		return (E_OPT_TYPE_ERR);
 	}
-	return (0);
+	else
+		return ((addr[1]) == ':' ? E_OPT_TYPE_OPERAND : E_OPT_TYPE_SIMPLE);
+}
+
+static int	parse_operand_opt(int ac, const char *const *av,
+		const char *optstring, t_opt *state)
+{
+	int c;
+
+	c = av[state->optind][state->optoff];
+	if (av[state->optind][state->optoff + 1] == '\0')
+	{
+		state->optarg = av[state->optind + 1];
+		state->optind += 2;
+		state->optoff = 0;
+		if (state->optind > ac)
+		{
+			if (state->opterr && optstring[0] != ':')
+				ft_getopt_err(av[0], ": option requires an argument -- '", c);
+			return ((optstring[0] == ':') ? ':' : '?');
+		}
+	}
+	else
+	{
+		state->optarg = av[state->optind] + state->optoff + 1;
+		state->optind += 1;
+		state->optoff = 0;
+	}
+	return (c);
+}
+
+static int	parse_simple_opt(const char *const *av, t_opt *state)
+{
+	int c;
+
+	c = av[state->optind][state->optoff];
+	if (av[state->optind][state->optoff + 1] != '\0')
+		state->optoff += 1;
+	else
+	{
+		state->optoff = 0;
+		state->optind += 1;
+	}
+	return (c);
+}
+
+static int	is_opt_candidate(const char *str)
+{
+	return (str && str[0] == '-' && str[1]);
+}
+
+int			ft_getopt(int ac, const char *const *av, const char *optstring,
+		t_opt *state)
+{
+	int opt_type;
+
+	if (state->optind == 0)
+		state->optind = 1;
+	if (!state->optoff)
+	{
+		if (state->optind < ac && is_opt_candidate(av[state->optind]))
+		{
+			if (av[state->optind][1] == '-' && av[state->optind][2] == '\0')
+				state->optind += 1;
+			else
+			{
+				state->optoff = 1;
+				return (ft_getopt(ac, av, optstring, state));
+			}
+		}
+		return (-1);
+	}
+	opt_type = opt_get_type(av, optstring, state);
+	if (opt_type == E_OPT_TYPE_OPERAND)
+		return (parse_operand_opt(ac, av, optstring, state));
+	else if (opt_type == E_OPT_TYPE_SIMPLE)
+		return (parse_simple_opt(av, state));
+	return ('?');
 }
