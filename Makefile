@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2017/12/18 22:55:07 by tvallee          ###   ########.fr        #
+#    Updated: 2018/01/02 16:05:37 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ CFLAGS	= -Wall -Wextra -Werror -ansi -pedantic -Wshadow -Wno-missing-noreturn\
 		  -Wmissing-declarations
 SRC_DIR	= src
 VPATH	= $(SRC_DIR)
-INC		= -I./include
+INC		= -I./inc
 OBJ_DIR	= obj
 OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
