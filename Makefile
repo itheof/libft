@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2018/01/02 16:05:37 by tvallee          ###   ########.fr        #
+#    Updated: 2018/01/02 19:01:36 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,8 +59,7 @@ SRC		= $(addprefix libc/, $(LIBC_SRC)) \
 		  $(addprefix getopt/, $(GETOPT_SRC))
 NAME	= libft.a
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -ansi -pedantic -Wshadow -Wno-missing-noreturn\
-		  -Wno-padded -Wno-unreachable-code -Wredundant-decls -g\
+CFLAGS	= -Wall -Wextra -Werror -ansi -pedantic -Wshadow -Wredundant-decls -g\
 		  -Wmissing-declarations
 SRC_DIR	= src
 VPATH	= $(SRC_DIR)
@@ -71,27 +70,22 @@ OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJ)
-	@echo "Creating archive library."
-	@ar rc $(NAME) $(OBJ)
-	@echo "Creating an index for archive library."
+	ar rc $(NAME) $(OBJ)
 
 $(OBJ_DIR)/%.o: %.c
-	@echo "Compiling $<."
-	@$(CC) $(CFLAGS) -c $< $(INC) -o $@
+	$(CC) $(CFLAGS) -c $< $(INC) -o $@
 
 $(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
-	@mkdir -p $(OBJ_DIR)/libc $(OBJ_DIR)/log $(OBJ_DIR)/list \
+	mkdir -p $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)/libc $(OBJ_DIR)/log $(OBJ_DIR)/list \
 		$(OBJ_DIR)/get_next_line $(OBJ_DIR)/print $(OBJ_DIR)/string \
 		$(OBJ_DIR)/array $(OBJ_DIR)/tree $(OBJ_DIR)/misc $(OBJ_DIR)/getopt
 
 clean:
-	@echo "Deleting obj files."
-	@rm -Rf $(OBJ_DIR)
+	rm -Rf $(OBJ_DIR)
 
 fclean: clean
-	@echo "Deleting archive library."
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
