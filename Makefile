@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2018/01/02 19:01:36 by tvallee          ###   ########.fr        #
+#    Updated: 2018/01/04 16:05:23 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ ARRAY_SRC		= ft_tabfree.c ft_tablen.c ft_tablineadd.c ft_tablinedel.c \
 TREE_SRC		= #btree_apply_infix.c btree_apply_prefix.c \
 				  btree_apply_suffix.c btree_create_node.c btree_insert_data.c
 
-MISC_SRC		= ft_itoa.c
+MISC_SRC		= ft_itoa.c ft_sizealign.c
 
 SRC		= $(addprefix libc/, $(LIBC_SRC)) \
 		  $(addprefix list/, $(LIST_SRC)) \

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stdbool.h                                          :+:      :+:    :+:   */
+/*   ft_align.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/04 13:55:36 by tvallee           #+#    #+#             */
-/*   Updated: 2018/01/04 16:08:25 by tvallee          ###   ########.fr       */
+/*   Created: 2018/01/04 15:57:26 by tvallee           #+#    #+#             */
+/*   Updated: 2018/01/04 16:06:52 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STDBOOL_H
-# define STDBOOL_H
+#include "libft.h"
 
-typedef enum	e_bool
+/*
+** Alignment must be a power of 2 && >=2
+*/
+size_t	align_size(size_t size, size_t alignment)
 {
-	false = 0,
-	true = 1
-}				t_bool;
+	size_t	truncated;
 
-#endif
+	truncated = size & (~(alignment - 1));
+	if (truncated < size)
+		return (truncated + alignment);
+	else
+		return (truncated);
+}

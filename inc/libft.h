@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2018/01/04 16:02:19 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/01/04 16:07:35 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 */
 
 char				*ft_itoa(int n);
+size_t				align_size(size_t size, size_t alignment);
 
 /*
 ** The following is WIP:
