@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2016/09/15 14:40:05 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/01/04 16:02:19 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # include "libft/list.h"
 # include "libft/print.h"
 # include "libft/string.h"
+# include "libft/stdbool.h"
 # include "libft/array.h"
 
 /*
