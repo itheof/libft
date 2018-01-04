@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2018/01/04 19:30:07 by tvallee          ###   ########.fr        #
+#    Updated: 2018/01/04 22:13:19 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,29 +72,34 @@ DEP_DIR        = ./.dep
 
 all: $(NAME)
 
-
 $(NAME): $(OBJ_DIR) $(OBJ)
-    ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
-$(DEP_PATH)/%.d: %.c | $(DEP_PATH)
-    $(CC) $(CFLAGS) -MM $< -MT $(OBJ_PATH)/$*.o -MF $@
-
--include $(DEPS) # object rules
+-include $(DEPS)
 
 $(OBJ_DIR)/%.o: %.c
-    $(CC) $(CFLAGS) -c $< $(INC) -o $@
+	$(CC) $(CFLAGS) -M -MF $@ $<
+
+#################
+#$(DEP_PATH)/%.d: %.c | $(DEP_PATH)
+#	$(CC) $(CFLAGS) -MM $< -MT $(OBJ_PATH)/$*.o -MF $@
+
+#-include $(DEPS) # object rules
+
+#$(OBJ_DIR)/%.o: %.c
+#	$(CC) $(CFLAGS) -c $< $(INC) -o $@
 
 $(OBJ_DIR):
-    mkdir -p $(OBJ_DIR)
-    mkdir -p $(OBJ_DIR)/libc $(OBJ_DIR)/log $(OBJ_DIR)/list \
-        $(OBJ_DIR)/get_next_line $(OBJ_DIR)/print $(OBJ_DIR)/string \
-        $(OBJ_DIR)/array $(OBJ_DIR)/tree $(OBJ_DIR)/misc $(OBJ_DIR)/getopt
+	mkdir -p $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)/libc $(OBJ_DIR)/log $(OBJ_DIR)/list \
+		$(OBJ_DIR)/get_next_line $(OBJ_DIR)/print $(OBJ_DIR)/string \
+		$(OBJ_DIR)/array $(OBJ_DIR)/tree $(OBJ_DIR)/misc $(OBJ_DIR)/getopt
 
 clean:
-    rm -Rf $(OBJ_DIR)
+	rm -Rf $(OBJ_DIR)
 
 fclean: clean
-    rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
