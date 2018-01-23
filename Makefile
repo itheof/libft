@@ -6,10 +6,21 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2018/01/04 22:13:19 by tvallee          ###   ########.fr        #
+#    Updated: 2018/01/23 11:57:55 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME            = libft.a
+CFLAGS         += -Wall -Wextra -Werror
+SRCDIR          = src/
+OBJDIR          = .obj/
+INCDIR         = inc/
+
+# set the suffix list explicitly
+.SUFFIXES:
+.SUFFIXES: .c .o .d
+
+# list all sources
 LIBC_SRC        = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
                   ft_isdigit.c ft_isprint.c ft_isspace.c ft_memalloc.c \
                   ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memdel.c \
@@ -42,65 +53,50 @@ STRING_SRC      = ft_strclr.c ft_strdel.c ft_strequ.c ft_striter.c \
 ARRAY_SRC       = ft_tabfree.c ft_tablen.c ft_tablineadd.c ft_tablinedel.c \
                   ft_tabtolst.c
 
-TREE_SRC        = #btree_apply_infix.c btree_apply_prefix.c \
-                  btree_apply_suffix.c btree_create_node.c btree_insert_data.c
+#TREE_SRC        = #btree_apply_infix.c btree_apply_prefix.c \
+#                  btree_apply_suffix.c btree_create_node.c btree_insert_data.c
 
 MISC_SRC        = ft_itoa.c ft_sizealign.c
 
-SRC             = $(addprefix libc/, $(LIBC_SRC)) \
-                  $(addprefix list/, $(LIST_SRC)) \
-                  $(addprefix log/, $(LOG_SRC)) \
-                  $(addprefix get_next_line/, $(GNL_SRC)) \
-                  $(addprefix print/, $(PRINT_SRC)) \
-                  $(addprefix string/, $(STRING_SRC)) \
-                  $(addprefix array/, $(ARRAY_SRC)) \
-                  $(addprefix tree/, $(TREE_SRC)) \
-                  $(addprefix misc/, $(MISC_SRC)) \
-                  $(addprefix getopt/, $(GETOPT_SRC))
+SRCDIRS         = libc/ list/ log/ get_next_line/ print/ string/ array/ tree/ misc/ getopt/
+SRC             = $(addprefix libc/,$(LIBC_SRC)) \
+				  $(addprefix list/,$(LIST_SRC)) \
+				  $(addprefix log/,$(LOG_SRC)) \
+                  $(addprefix get_next_line/,$(GNL_SRC)) \
+				  $(addprefix print/,$(PRINT_SRC)) \
+				  $(addprefix string/,$(STRING_SRC)) \
+				  $(addprefix array/,$(ARRAY_SRC)) \
+				  $(addprefix tree/,$(TREE_SRC)) \
+				  $(addprefix misc/,$(MISC_SRC)) \
+				  $(addprefix getopt/,$(GETOPT_SRC))
 
-NAME            = libft.a
-CFLAGS         += -Wall -Wextra -Werror -ansi -pedantic -Wshadow \
-                  -Wredundant-decls -Wmissing-declarations
-SRC_DIR         = src
 
-INC_DIR         = ./inc
-CFLAGS         += -I$(INC_DIR)
-OBJ_DIR         = ./.obj
-OBJ             = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
-DEPS            = $(addprefix $(DEP_PATH)/,$(SRC:.c=.d))
-DEP_DIR        = ./.dep
+CFLAGS         += -I$(INCDIR)
+OBJS            = $(SRC:.c=.o)
+DEPS            = $(OBJS:.o=.d)
+OUTPUT_OPTION   = -o $(OBJDIR)$@
+CPPFLAGS       += -MT $@ -MMD -MP -MF $(OBJDIR)$(@:.o=.d)
+OBJDIRS         = $(addprefix $(OBJDIR),$(SRCDIRS))
 
-all: $(NAME)
+vpath %.c $(SRCDIR)
+vpath %.o $(OBJDIR)
 
-$(NAME): $(OBJ_DIR) $(OBJ)
-	ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+	$(AR) rc $@ $(addprefix $(OBJDIR),$(OBJS))
 
--include $(DEPS)
+.SECONDEXPANSION:
+$(OBJS): %: | $$(dir $(OBJDIR)%)
+-include $(addprefix $(OBJDIR),$(DEPS))
 
-$(OBJ_DIR)/%.o: %.c
-	$(CC) $(CFLAGS) -M -MF $@ $<
-
-#################
-#$(DEP_PATH)/%.d: %.c | $(DEP_PATH)
-#	$(CC) $(CFLAGS) -MM $< -MT $(OBJ_PATH)/$*.o -MF $@
-
-#-include $(DEPS) # object rules
-
-#$(OBJ_DIR)/%.o: %.c
-#	$(CC) $(CFLAGS) -c $< $(INC) -o $@
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-	mkdir -p $(OBJ_DIR)/libc $(OBJ_DIR)/log $(OBJ_DIR)/list \
-		$(OBJ_DIR)/get_next_line $(OBJ_DIR)/print $(OBJ_DIR)/string \
-		$(OBJ_DIR)/array $(OBJ_DIR)/tree $(OBJ_DIR)/misc $(OBJ_DIR)/getopt
+$(OBJDIRS) $(OBJDIR):
+	mkdir -p $@
 
 clean:
-	rm -Rf $(OBJ_DIR)
+	rm -Rf $(OBJDIR)
 
-fclean: clean
+fclean: | clean
 	rm -f $(NAME)
 
-re: fclean all
+re: | fclean $(NAME)
 
-.PHONY: all clean fclean re
+.PHONY: clean fclean re
