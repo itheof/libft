@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2018/01/23 11:57:55 by tvallee          ###   ########.fr        #
+#    Updated: 2018/01/23 12:58:45 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,11 +92,13 @@ $(OBJDIRS) $(OBJDIR):
 	mkdir -p $@
 
 clean:
-	rm -Rf $(OBJDIR)
+	$(RM) -Rf $(OBJDIR)
 
 fclean: | clean
-	rm -f $(NAME)
+	$(RM) -f $(NAME)
 
-re: | fclean $(NAME)
+re:
+	$(MAKE) -j8 fclean
+	$(MAKE) -j8
 
 .PHONY: clean fclean re
