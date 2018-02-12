@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2018/01/23 12:58:45 by tvallee          ###   ########.fr        #
+#    Updated: 2018/02/08 17:12:23 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ GNL_SRC         = get_next_line.c
 
 PRINT_SRC       = ft_putchar.c ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c \
                   ft_putendlfree_fd.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c \
-                  ft_putstr_fd.c ft_puthex.c ft_puthex_fd.c ft_putunsigned.c
+                  ft_putstr_fd.c ft_puthex.c ft_puthex_fd.c ft_putunsigned.c \
+				  ft_hexdump.c
 
 STRING_SRC      = ft_strclr.c ft_strdel.c ft_strequ.c ft_striter.c \
                   ft_striteri.c ft_strjoin.c ft_strmap.c ft_strmapi.c \

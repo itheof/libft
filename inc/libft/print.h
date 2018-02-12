@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/10 12:14:55 by tvallee           #+#    #+#             */
-/*   Updated: 2017/12/07 00:01:07 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/08 17:09:46 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_puthex_fd(size_t n, int fd);
+
+void				ft_hexdump(const char *addr, size_t nbytes);
 
 #endif
