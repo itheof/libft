@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 10:16:50 by tvallee           #+#    #+#             */
-/*   Updated: 2017/12/18 22:51:04 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/13 09:37:55 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ enum			e_opt_type
 
 int				ft_getopt(int ac, const char *const *av,
 		const char *optstring, t_opt *state);
-void			ft_getopt_err(const char *name, const char *reason, char invalid);
-
+void			ft_getopt_err(const char *name, const char *reason,
+		char invalid);
 
 #endif
