@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2018/02/12 17:53:40 by tvallee          ###   ########.fr        #
+#    Updated: 2018/02/13 12:53:08 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,9 @@ BUFFER_SRC      = buffer_init.c buffer_cat.c buffer_deinit.c buffer_reserve.c \
 
 MISC_SRC        = ft_itoa.c ft_sizealign.c
 
-SRCDIRS         = libc/ list/ log/ get_next_line/ print/ string/ array/ tree/ misc/ getopt/ buffer/
+SWAP_SRC        = swap_short.c swap_long.c swap_longlong.c
+
+SRCDIRS         = libc/ list/ log/ get_next_line/ print/ string/ array/ tree/ misc/ getopt/ buffer/ swap/
 SRC             = $(addprefix libc/,$(LIBC_SRC)) \
 				  $(addprefix list/,$(LIST_SRC)) \
 				  $(addprefix log/,$(LOG_SRC)) \
@@ -73,7 +75,8 @@ SRC             = $(addprefix libc/,$(LIBC_SRC)) \
 				  $(addprefix tree/,$(TREE_SRC)) \
 				  $(addprefix misc/,$(MISC_SRC)) \
 				  $(addprefix getopt/,$(GETOPT_SRC)) \
-				  $(addprefix buffer/,$(BUFFER_SRC))
+				  $(addprefix buffer/,$(BUFFER_SRC)) \
+				  $(addprefix swap/,$(SWAP_SRC))
 
 
 CFLAGS         += -I$(INCDIR)

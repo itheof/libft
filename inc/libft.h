@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2018/02/12 16:39:35 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/13 12:53:27 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # include "libft/stdbool.h"
 # include "libft/array.h"
 # include "libft/buffer.h"
+# include "libft/swap.h"
 
 /*
 ** The following are misc functions
