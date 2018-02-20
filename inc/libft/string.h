@@ -6,14 +6,14 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/10 12:16:07 by tvallee           #+#    #+#             */
-/*   Updated: 2017/12/18 14:21:16 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:40:22 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRING_H
 # define STRING_H
 
-# include "libft.h"
+#include <stdlib.h>
 
 char				*ft_strnew(size_t size);
 void				ft_strdel(char **as);

@@ -6,14 +6,12 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/08 11:06:12 by tvallee           #+#    #+#             */
-/*   Updated: 2015/11/25 10:11:12 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:39:28 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LOG_H
 # define FT_LOG_H
-
-# include "libft.h"
 
 # define C_EMERGENCY "\033[0;41;30m"
 # define C_ALERT "\033[0;41;36m"

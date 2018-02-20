@@ -6,19 +6,19 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2018/02/13 12:53:27 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:41:03 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
-# include <stdint.h>
-# include <unistd.h>
+//# include <string.h>
+//# include <stdint.h>
+//# include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <time.h>
+//# include <stdio.h>
+//# include <time.h>
 
 # include "libft/getopt.h"
 # include "libft/get_next_line.h"

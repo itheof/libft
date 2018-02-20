@@ -6,14 +6,15 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/10 12:17:30 by tvallee           #+#    #+#             */
-/*   Updated: 2017/12/18 14:20:40 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:37:58 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_H
 # define ARRAY_H
 
-# include "libft.h"
+#include <stdlib.h>
+#include "libft/list.h"
 
 int					ft_freetab(void **tab);
 size_t				ft_tablen(void **tab);

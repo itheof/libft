@@ -6,11 +6,12 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 15:14:30 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/08 14:42:43 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:43:41 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 static int		ft_canyoufillit(char *s, t_buff *buff, int i)
 {

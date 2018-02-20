@@ -6,14 +6,14 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/10 12:14:55 by tvallee           #+#    #+#             */
-/*   Updated: 2018/02/08 17:09:46 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:45:21 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINT_H
 # define PRINT_H
 
-# include "libft.h"
+# include <stdlib.h>
 
 # if defined(__MACH__) || defined(__linux__)
 #  define FT_EOL(x) ft_putchar_fd('\n', x);

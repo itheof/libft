@@ -6,10 +6,11 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 15:47:58 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 15:50:54 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:44:09 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void	ft_putchar(char c)

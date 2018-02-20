@@ -6,10 +6,12 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/30 13:49:50 by tvallee           #+#    #+#             */
-/*   Updated: 2017/12/18 22:53:58 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:47:11 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include "libft/libc.h"
 #include "libft/getopt.h"
 
 static int	opt_get_type(const char *const *av,

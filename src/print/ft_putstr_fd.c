@@ -6,10 +6,11 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 16:07:13 by tvallee           #+#    #+#             */
-/*   Updated: 2014/11/05 16:10:02 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:44:58 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)

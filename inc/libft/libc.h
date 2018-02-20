@@ -6,14 +6,12 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/08 12:16:16 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/10 12:14:08 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:39:08 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIBC_H
 # define FT_LIBC_H
-
-# include "libft.h"
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);

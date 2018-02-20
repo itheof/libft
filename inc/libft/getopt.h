@@ -6,14 +6,12 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/15 10:16:50 by tvallee           #+#    #+#             */
-/*   Updated: 2018/02/13 09:37:55 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:39:01 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_GETOPT_H
 # define FT_GETOPT_H
-
-# include "libft.h"
 
 # define OPT_INIT(o) ((o) = (t_opt){NULL, 0, 0, 0, 0})
 

@@ -6,14 +6,12 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/10 12:07:58 by tvallee           #+#    #+#             */
-/*   Updated: 2015/10/10 12:22:28 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/20 11:40:39 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TREE_H
 # define TREE_H
-
-# include "libft.h"
 
 typedef struct		s_btree
 {
