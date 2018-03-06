@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2018/02/13 12:53:08 by tvallee          ###   ########.fr        #
+#    Updated: 2018/03/06 14:29:39 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ ARRAY_SRC       = ft_tabfree.c ft_tablen.c ft_tablineadd.c ft_tablinedel.c \
 #                  btree_apply_suffix.c btree_create_node.c btree_insert_data.c
 
 BUFFER_SRC      = buffer_init.c buffer_cat.c buffer_deinit.c buffer_reserve.c \
-				  buffer_reserve.c
+				  buffer_reserve.c buffer_cat_num.c
 
 MISC_SRC        = ft_itoa.c ft_sizealign.c
 
@@ -90,7 +90,7 @@ vpath %.c $(SRCDIR)
 vpath %.o $(OBJDIR)
 
 $(NAME): $(OBJS)
-	$(AR) rc $@ $(addprefix $(OBJDIR),$(OBJS))
+	$(AR) rcs $@ $(addprefix $(OBJDIR),$(OBJS))
 
 .SECONDEXPANSION:
 $(OBJS): %: | $$(dir $(OBJDIR)%)

@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/12 16:39:54 by tvallee           #+#    #+#             */
-/*   Updated: 2018/02/12 17:52:34 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/02/26 15:01:17 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ t_bool			buffer_reserve(t_buffer *buf, size_t avail);
 
 t_bool			buffer_ncat(t_buffer *buf, const char *str, size_t n);
 t_bool			buffer_cat(t_buffer *buf, const char *str);
+t_bool			buffer_cat_num(t_buffer *buf, size_t n);
 
 /*
 ** Unsafe functions: no checking is performed
