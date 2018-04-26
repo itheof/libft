@@ -6,7 +6,7 @@
 /*   By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 11:00:31 by tvallee           #+#    #+#             */
-/*   Updated: 2018/02/20 11:41:03 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/04/26 11:43:49 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # include "libft/array.h"
 # include "libft/buffer.h"
 # include "libft/swap.h"
+# include "libft/class.h"
 
 /*
 ** The following are misc functions
