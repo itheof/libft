@@ -6,7 +6,7 @@
 #    By: tvallee <tvallee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/10 14:41:44 by tvallee           #+#    #+#              #
-#    Updated: 2018/04/26 12:22:18 by tvallee          ###   ########.fr        #
+#    Updated: 2018/04/26 16:30:39 by tvallee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,9 @@ MISC_SRC        = ft_itoa.c ft_sizealign.c
 
 SWAP_SRC        = swap_short.c swap_long.c swap_longlong.c
 
-SRCDIRS         = libc/ list/ log/ get_next_line/ print/ string/ array/ tree/ misc/ getopt/ buffer/ swap/
+CLASS_SRC		= class.c
+
+SRCDIRS         = libc/ list/ log/ get_next_line/ print/ string/ array/ tree/ misc/ getopt/ buffer/ swap/ class/
 SRC             = $(addprefix libc/,$(LIBC_SRC)) \
 				  $(addprefix list/,$(LIST_SRC)) \
 				  $(addprefix log/,$(LOG_SRC)) \
@@ -76,7 +78,8 @@ SRC             = $(addprefix libc/,$(LIBC_SRC)) \
 				  $(addprefix misc/,$(MISC_SRC)) \
 				  $(addprefix getopt/,$(GETOPT_SRC)) \
 				  $(addprefix buffer/,$(BUFFER_SRC)) \
-				  $(addprefix swap/,$(SWAP_SRC))
+				  $(addprefix swap/,$(SWAP_SRC)) \
+				  $(addprefix class/,$(CLASS_SRC))
 
 
 CFLAGS         += -I$(INCDIR)
