@@ -39,14 +39,14 @@ set window=0
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/work/nm-otool/libft/src/class
+cd ~/work/nm-otool/libft/inc/libft
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 badd +1 ~/work/nm-otool/libft/main.c
 badd +1 ~/work/nm-otool/libft/inc/libft/class.h
-badd +1 ~/work/nm-otool/libft/src/class/class_poc.c
+badd +2 ~/work/nm-otool/libft/src/class/class_poc.c
 badd +1 ~/work/nm-otool/libft/src/class/class.c
 badd +67 ~/work/nm-otool/libft/Makefile
 argglobal
@@ -57,134 +57,15 @@ wincmd _ | wincmd |
 vsplit
 wincmd _ | wincmd |
 vsplit
-wincmd _ | wincmd |
-vsplit
-3wincmd h
-wincmd w
+2wincmd h
 wincmd w
 wincmd w
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 91 + 182) / 364)
-exe 'vert 2resize ' . ((&columns * 90 + 182) / 364)
-exe 'vert 3resize ' . ((&columns * 90 + 182) / 364)
-exe 'vert 4resize ' . ((&columns * 90 + 182) / 364)
+exe 'vert 1resize ' . ((&columns * 92 + 138) / 276)
+exe 'vert 2resize ' . ((&columns * 91 + 138) / 276)
+exe 'vert 3resize ' . ((&columns * 91 + 138) / 276)
 argglobal
-setlocal noautoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal cindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-set colorcolumn=80
-setlocal colorcolumn=80
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'c'
-setlocal filetype=c
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-set foldmethod=syntax
-setlocal foldmethod=syntax
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=ccomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal smartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=%!pyeval('powerline.statusline(1)')
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'c'
-setlocal syntax=c
-endif
-setlocal tabstop=4
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-17
-normal! zo
-26
-normal! zo
-let s:l = 36 - ((27 * winheight(0) + 24) / 48)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-36
-normal! 0
-wincmd w
-argglobal
-edit ~/work/nm-otool/libft/src/class/class_poc.c
 setlocal noautoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -270,7 +151,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%!pyeval('powerline.statusline(2)')
+setlocal statusline=%!pyeval('powerline.statusline(1)')
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -287,20 +168,20 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-37
+52
 normal! zo
-38
+53
 normal! zo
-79
+111
 normal! zo
-80
+112
 normal! zo
-let s:l = 83 - ((43 * winheight(0) + 24) / 48)
+let s:l = 92 - ((53 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-83
-normal! 018|
+92
+normal! 0
 wincmd w
 argglobal
 edit ~/work/nm-otool/libft/src/class/class.c
@@ -418,11 +299,13 @@ normal! zo
 normal! zo
 46
 normal! zo
-let s:l = 42 - ((31 * winheight(0) + 24) / 48)
+56
+normal! zo
+let s:l = 61 - ((56 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-42
+61
 normal! 0
 wincmd w
 argglobal
@@ -529,20 +412,17 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-46
-normal! zo
-let s:l = 18 - ((13 * winheight(0) + 24) / 48)
+let s:l = 46 - ((40 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
+46
 normal! 0
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 91 + 182) / 364)
-exe 'vert 2resize ' . ((&columns * 90 + 182) / 364)
-exe 'vert 3resize ' . ((&columns * 90 + 182) / 364)
-exe 'vert 4resize ' . ((&columns * 90 + 182) / 364)
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 92 + 138) / 276)
+exe 'vert 2resize ' . ((&columns * 91 + 138) / 276)
+exe 'vert 3resize ' . ((&columns * 91 + 138) / 276)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 11:43:59 by tvallee           #+#    #+#             */
-/*   Updated: 2018/04/26 19:18:31 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/04/27 11:14:36 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,36 +52,9 @@ typedef struct	s_class_model
 	char			class_specific[];
 }				t_class_model;
 
-/*
-** Examples
-*/
-
-struct s_class_poc;
-typedef struct	s_class_poc	t_class_poc;
-struct	s_class_poc
-{
-	t_cls_info		class;
-	t_class_object	super;
-	void			(*class_init)(t_class_poc *self);
-	void			(*class_shutdown)(t_class_poc *self);
-
-	void			(*greet)(t_class_poc *self);
-	const char		*msg;
-};
-
-struct s_class_poc_son;
-typedef struct	s_class_poc_son	t_class_poc_son;
-struct	s_class_poc_son
-{
-	t_cls_info		class;
-	t_class_poc		super;
-	void			(*class_init)(t_class_poc_son *self);
-	void			(*class_shutdown)(t_class_poc_son *self);
-
-	void			(*greet)(t_class_poc_son *self);
-	int				number;
-};
-
 void	class_preload(void *dst, void const *src);
+void	*class_super(void *son);
+
+extern t_class_object const	class_object;
 
 #endif

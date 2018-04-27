@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 16:16:50 by tvallee           #+#    #+#             */
-/*   Updated: 2018/04/26 19:05:50 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/04/27 09:40:33 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,12 @@ void	class_preload(void *dst, void const *src)
 		class_preload((t_class_model*)((char *)dst2 + sizeof(dst2->class)),
 				src2->class.super);
 	}
+}
+
+void	*class_super(void *son)
+{
+	t_class_model	*casted;
+
+	casted = son;
+	return ((char*)casted + sizeof(casted->class));
 }
