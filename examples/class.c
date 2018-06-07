@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 16:11:16 by tvallee           #+#    #+#             */
-/*   Updated: 2018/04/27 11:19:00 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/04/27 15:38:36 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,9 @@ struct	s_class_poc_son
 
 static void	init_son(t_class_poc_son *self)
 {
-	t_class_poc	*super;
 
-	super = (t_class_poc *)((char*)(self) + sizeof(self->class));
 	ft_putendl("init_son() started");
-	super->class_init(super);
+	CLASS_CALL(CLASS_SUPER(t_class_poc), class_init);
 	ft_putendl("init_son() ended");
 }
 
@@ -93,7 +91,7 @@ static void	shutdown_son(t_class_poc_son *self)
 {
 	t_class_poc	*super;
 
-	super = (t_class_poc *)((char*)(self) + sizeof(self->class));
+	super = (t_class_poc *)(class_super(self));
 	ft_putendl("shutdown_son() started");
 	super->class_shutdown(super);
 	ft_putendl("shutdown_son() ended");
@@ -125,7 +123,7 @@ t_class_poc_son const	class_poc_son = {
 
 int main()
 {
-	t_class_poc	inst;
+	t_class_poc		inst;
 	t_class_poc_son	inst2;
 
 	CLASS_INIT(inst, class_poc);

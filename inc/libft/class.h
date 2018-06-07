@@ -6,7 +6,7 @@
 /*   By: tvallee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 11:43:59 by tvallee           #+#    #+#             */
-/*   Updated: 2018/04/27 11:14:36 by tvallee          ###   ########.fr       */
+/*   Updated: 2018/04/27 15:46:26 by tvallee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@
 # include "libft/libc.h"
 # include "libft/stdbool.h"
 
-// x is a union type
 # define CLASS_INIT(inst, cls, ...) class_preload(&inst, &cls) ; inst.class_init(&inst, ##__VA_ARGS__)
 # define CLASS_CALL(inst, fun, ...) inst.fun(&inst, ##__VA_ARGS__)
+# define CLASS_SUPER(super_cls) (*(super_cls*)((char*)self + sizeof(t_cls_info)))
 # define CLASS_SHUT(inst) inst.class_shutdown(&inst)
-
-
 
 struct s_cls_info;
 typedef struct s_cls_info	t_cls_info;

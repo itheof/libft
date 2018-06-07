@@ -19,6 +19,8 @@ void	ft_hexdump(const char *addr, size_t nbytes)
 	size_t		i;
 
 	i = 0;
+	if (nbytes == 0)
+		return ; 
 	while (true)
 	{
 		ft_putchar_fd(map[(*addr & 0xF0) >> 4], 2);
