@@ -13,8 +13,8 @@
 #ifndef ARRAY_H
 # define ARRAY_H
 
-#include <stdlib.h>
-#include "libft/list.h"
+# include <stdlib.h>
+# include "libft/list.h"
 
 int					ft_freetab(void **tab);
 size_t				ft_tablen(void **tab);
